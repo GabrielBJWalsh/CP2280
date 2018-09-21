@@ -31,22 +31,42 @@ public class Account {
 
     /**
      * josh made me write this
+     *
      * @param amount
      */
-    public void debit(double amount){
-        if (amount > balance ){
+    public void debit(double amount) {
+        if (amount > balance) {
             System.out.println("too big");
-        }else if (amount<0) {
+        } else if (amount < 0) {
             System.out.println("dont be tricky");
-        }else{
-            balance= balance-amount;
+        } else {
+            balance = balance - amount;
         }
 
 
-
+/**
+ *a method to credit the an account
+ * @parm amount
+ *
+ *
+ */
 
     }
 
+    public void credit(double amount) {
+        if (amount <= 0) {
+            System.out.println("you cant add a negative ");
+        } else {
+            balance = balance + amount;
+        }
+    }
+
+    /**
+     * method to reset account balance
+     */
+    public void reset() {
+        balance = 0.00;
+
+    }
 
 }
-
