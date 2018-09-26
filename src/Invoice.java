@@ -11,10 +11,11 @@ public class Invoice {
     /**
      * set method to set part Number
      *
-     * @return
+     *
      */
-    public String setPartNUM(partNUM) {
+    public String setPartNUM(String partNUM) {
         this.partNUM = partNUM;
+        return partNUM;
 
     }
 
@@ -27,14 +28,14 @@ public class Invoice {
     public void setpDiscription(String pDiscription) {
         this.pDiscription = pDiscription;
     }
+
     /**
      * set method for number of items sold
+     *
      * @param quantity
      */
 
-    public void
-
-    int setQuantity(quantity) {
+    public void setQuantity(int quantity) {
         if (quantity >= 0) {
             this.quantity = quantity;
         }
@@ -91,14 +92,15 @@ public class Invoice {
         return partNUM;
     }
 
-    public void balance() {
+    public double balance() {
         price = getPrice();
         quantity = getQuantity();
-        total = price * quantity;
+        double total = price * quantity;
         if (total < 0) {
-            return 0;
-        } else {
-            return total;
+            total = 0;
         }
+        return total;
+        }
+
     }
-}
+
