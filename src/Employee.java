@@ -35,9 +35,10 @@ public class Employee {
         return salary;
     }
 
-    public void setSalary(double salary) {
+    public double setSalary(double salary) {
         if(salary>0){
             this.salary = salary;
     }   else{this.salary=0.00;}
+    return this.salary;
     }
 }
