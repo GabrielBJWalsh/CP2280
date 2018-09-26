@@ -12,7 +12,7 @@ public class AccountTester {
         String userInput;   //capture the users input
 
         //Start off with an empty account
-        Account account = new Account(1000.0);
+        Account account = new Account(0);
 
         //Build up an input system for users to manage an account
         do{
