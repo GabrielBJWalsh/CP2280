@@ -13,9 +13,9 @@ public class Invoice {
      *
      *
      */
-    public String setPartNUM(String partNUM) {
+    public void setPartNUM(String partNUM) {
         this.partNUM = partNUM;
-        return partNUM;
+
 
     }
 
