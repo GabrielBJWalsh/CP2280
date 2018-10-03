@@ -8,6 +8,7 @@ public class EmployeeTester {
         Employee employee2 = new Employee("Dave", "par", 3000.00);
         System.out.println("heres an employee:");
 
+
         System.out.printf("name: %s %s\nMothly Salary: %.2f\n",
                 employee.getFname(),
                 employee.getLname(),
@@ -24,12 +25,11 @@ public class EmployeeTester {
         );
         System.out.printf("yearly Salary: %.2f\n",
                 employee.getSalary()*12);
-        employee.setSalary(employee.getSalary()*.1);
-        employee2.setSalary(employee2.getSalary()*.1);
-        System.out.println("yay everyone got a 10% raise");
+        System.out.println("yay David got a 10% raise");
         double emp = employee.getSalary();
-        double pme = employee.setSalary(emp)*.1;
+        double pme = employee.setSalary(emp)*1.1;
         System.out.println(pme);
+        employee.setSalary(pme);
         System.out.printf("name: %s %s\nMothly Salary: %.2f\n",
                 employee.getFname(),
                 employee.getLname(),
@@ -37,6 +37,9 @@ public class EmployeeTester {
         );
         System.out.printf("yearly Salary: %.2f\n",
                 employee.getSalary()*12);
+
+
+
 
     }
 
