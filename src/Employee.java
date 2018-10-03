@@ -42,3 +42,6 @@ public class Employee {
     return this.salary;
     }
 }
+// make a print emp method
+// make a yearly sal method
+//make a rais method

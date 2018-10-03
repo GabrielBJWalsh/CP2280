@@ -10,20 +10,22 @@ public class Date {
 
     /**
      * constcutor method for date class
+     *
      * @param day
      * @param month
      * @param year
      */
-    public Date(int day,int month,int year){
+    public Date(int day, int month, int year) {
         setDay(day);
         setMonth(month);
+        setYear(year);
 
     }
 
-}
 
     /**
      * getter method for month
+     *
      * @return
      */
     public int getMonth() {
@@ -36,11 +38,17 @@ public class Date {
      */
 
     public void setMonth(int month) {
+        if (month > 12) {
+            this.month = 1;
+        }else{
         this.month = month;
     }
 
+}
+
     /**
      * getter method for day
+     *
      * @return
      */
     public int getDay() {
@@ -49,14 +57,20 @@ public class Date {
 
     /**
      * set method for day
+     *
      * @param day
      */
     public void setDay(int day) {
-        this.day = day;
+        if (day > 31) {
+            this.day = 1;
+        } else {
+            this.day = day;
+        }
     }
 
     /**
      * getter method for Year
+     *
      * @return
      */
     public int getYear() {
@@ -65,8 +79,14 @@ public class Date {
 
     /**
      * set method for year
+     *
      * @param year
      */
     public void setYear(int year) {
         this.year = year;
     }
+
+    public void displayDate() {
+        System.out.printf("TODAY IS %d/%d/%d", getMonth(), getDay(), getYear());
+    }
+}
