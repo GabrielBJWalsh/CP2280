@@ -1,5 +1,5 @@
 package healthApp;
-
+import java.time.Period;
 import java.time.LocalDate;
 
 /**
@@ -40,7 +40,8 @@ public class Patient {
      * @return int
      */
     public int age() {
-        return LocalDate.now().getYear() - dob.getYear();
+        return Period.between(getDob(),LocalDate.now()).getYears();
+                //LocalDate.now().getYear() - dob.getYear();
     }
 
 
