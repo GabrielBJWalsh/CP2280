@@ -14,7 +14,7 @@ public class PrimeNumberCalculator {
      *
      * @return
      */
-    private static boolean isPrime(int num)
+    public static boolean isPrime(int num)
     {
         if (num == 2)
             return true;
@@ -49,12 +49,12 @@ public class PrimeNumberCalculator {
      * @return
      */
 
-    public static int numberOfPrimes(int number) {
+   /* public static int numberOfPrimes(int number) {
         int counter = 0;
         for (double i = 0; i <= number; i++) {
             if (isPrime(i)) {
                 /*System.out.printf("number%d is prime\n counter is%d ",i,counter);
-                counter = counter + 1;*/
+                counter = counter + 1;*
                 System.out.printf("\nis prime %.2f returns ture",i);
             }
         }
@@ -67,7 +67,7 @@ public class PrimeNumberCalculator {
         int[] primeList = new int[numberOfPrimes(number)];
         return primeList;
     }
-
+*/
 
 
 
