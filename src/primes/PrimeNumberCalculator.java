@@ -36,28 +36,51 @@ public class PrimeNumberCalculator {
         int counter = 0;
         for (int i = 0; i <= number; i++) {
             if (isPrime(i)) {
-                System.out.printf("number%d is prime\n counter is%d ", i, counter);
+                // System.out.printf("number%d is prime\n counter is%d ", i, counter);
                 counter = counter + 1;
-                System.out.printf("\nis prime %.2f returns ture", i);
+                //System.out.printf("\nis prime %.2f returns ture", i);
             }
         }
         return counter;
     }
 
+    /**
+     * a method to list primes between n and n2
+     *
+     * @param num1
+     * @param num2
+     * @return
+     */
+
     public static int[] primesBetween(int num1, int num2) {
         int counter = 0;
         int[] primesBetween = new int[numberOfPrimes(num2)];
-        for (int i = num1; i <= num2; i++){
-            if (isPrime(i)){
-                primesBetween[counter]=i;
+        for (int i = num1; i <= num2; i++) {
+            if (isPrime(i)) {
+                primesBetween[counter] = i;
                 counter++;
 
             }
 
         }
         return primesBetween;
+
+    }
+
+    /**
+     * method used for printing arrays
+     *
+     * @param intAray
+     */
+    static void printArray(int[] intAray) {
+        for (int i = 0; i < intAray.length; i++) {
+            if (intAray[i] != 0) {
+                System.out.println(intAray[i]);
+            }
+        }
     }
 //foucs on chap 1 and 2
+
     /**
      * a method that returns the prime factors of a number
      *

@@ -11,8 +11,8 @@ public class PrimeTester {
 
 
         //Set up the scanner from the console
-        Scanner consoleInput = new Scanner(System.in);
-        String userInput;   //capture the users input
+         Scanner consoleInput = new Scanner(System.in);
+         String userInput;   //capture the users input
 
         // do while interface
         /*
@@ -24,7 +24,7 @@ public class PrimeTester {
         *
         * c.Prints the unique prime factorization of a number input by the user.
         *
-         *  d.Has a nice console interface to manage these option
+         *  d.Has a nice console interface to manage these option*/
         do {
             System.out.println("Prime number operations: \n" +
                     "\tAll primes less then N [A]\n" +
@@ -32,17 +32,33 @@ public class PrimeTester {
                     "\tunique prime factorization of a number [C]\n" +
                     "\tQuit [X]\n" +
                     "Enter selection:");
+            userInput = consoleInput.next();
             if (userInput.equals("A")||userInput.equals("a")){
-                System.out.println();
+                System.out.println("Provide N:");
+                PrimeNumberCalculator.printArray(PrimeNumberCalculator.primesBetween(0,consoleInput.nextInt()));
 
             }
+            if (userInput.equals("B")||userInput.equals("b")){
+                System.out.println("Provide N:");
+                int number = consoleInput.nextInt();
+                System.out.println("Provide N2");
+                int number2 = consoleInput.nextInt();
+                PrimeNumberCalculator.printArray(PrimeNumberCalculator.primesBetween(number,number2));
+
+            }
+            if (userInput.equals("C")||userInput.equals("c")){
+                System.out.println("what number would you like the prime factor of?");
+                System.out.println(PrimeNumberCalculator.uniquePrimeFactorized(consoleInput.nextInt()));
+            }
+
 
 
 
         } while (!(userInput.equals("X") || userInput.equals("x"))); //Not X
 
-*/
-        System.out.println(PrimeNumberCalculator.primesBetween(0,100));
+
+        PrimeNumberCalculator.printArray(PrimeNumberCalculator.primesBetween(0,100));
+
     }
 
 }
