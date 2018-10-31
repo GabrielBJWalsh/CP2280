@@ -44,14 +44,27 @@ public class PrimeNumberCalculator {
     }
 
 
-
+    /**
+     * a method that returns the prime factors of a number
+     * @param number
+     * @return
+     */
 
 
 public static String uniquePrimeFactorized(int number){
-       for (int i=2;i<number; i++){
+       String factors ="";
+       for (int i=2;i<=number; i++){
+           while (number % i==0){
+               factors += i +" x ";
+               number = number/i;
+           }
 
        }
-        return"hi";
+       if (number>2){
+           factors+="";
+       }
+
+        return factors;
         }
         }
 
