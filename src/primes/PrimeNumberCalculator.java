@@ -14,7 +14,7 @@ public class PrimeNumberCalculator {
      *
      * @return
      */
-    public static boolean isPrime(int num)
+    public static boolean isPrime(double num)
     {
         if (num == 2)
             return true;
@@ -24,57 +24,50 @@ public class PrimeNumberCalculator {
             if (num % i == 0)
                 return false;
         return true;
-    }/*
-    public static boolean isPrime(double number) {
-        double root = Math.sqrt(number);
-        boolean isPrime = true;
-        for (double i = 2; i <= root; i = i + 1.0) {
-            if (i % root == 0) {
-                isPrime = false;
-                break;
-
-            } else {
-                isPrime = true;
-            }
-
-        }
-
-
-        return isPrime;
     }
-*/
     /**
      * a method to get the number of primes between 0 and a number
      * @param number
      * @return
      */
 
-   /* public static int numberOfPrimes(int number) {
-        int counter = 0;
+   public static double numberOfPrimes(double number) {
+        double counter = 0;
         for (double i = 0; i <= number; i++) {
             if (isPrime(i)) {
-                /*System.out.printf("number%d is prime\n counter is%d ",i,counter);
-                counter = counter + 1;*
+                System.out.printf("number%d is prime\n counter is%d ",i,counter);
+                counter = counter + 1;
                 System.out.printf("\nis prime %.2f returns ture",i);
             }
         }
         return counter;
     }
 
-    public static int[] primesList(int number) {
-
-
-        int[] primeList = new int[numberOfPrimes(number)];
-        return primeList;
-    }
-*/
-
 
 
 
 
 public static String uniquePrimeFactorized(int number){
+       for (int i=2;i<number; i++){
 
+       }
         return"hi";
         }
         }
+
+        /*python testing
+        * def uniquePrimes(number):
+    factors = "";
+    for i  in range(2,number):
+        while number % i == 0:
+            factors += str(i) + " ";
+            number = number / i;
+
+
+        if number > 2:
+            factors += " ";
+
+    return factors;
+
+
+print(uniquePrimes(49))*/
