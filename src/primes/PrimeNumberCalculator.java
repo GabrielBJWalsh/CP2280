@@ -14,8 +14,7 @@ public class PrimeNumberCalculator {
      *
      * @return
      */
-    public static boolean isPrime(double num)
-    {
+    public static boolean isPrime(int num) {
         if (num == 2)
             return true;
         if (num < 2 || num % 2 == 0)
@@ -25,48 +24,64 @@ public class PrimeNumberCalculator {
                 return false;
         return true;
     }
+
     /**
      * a method to get the number of primes between 0 and a number
+     *
      * @param number
      * @return
      */
 
-   public static double numberOfPrimes(double number) {
-        double counter = 0;
-        for (double i = 0; i <= number; i++) {
+    public static int numberOfPrimes(int number) {
+        int counter = 0;
+        for (int i = 0; i <= number; i++) {
             if (isPrime(i)) {
-                System.out.printf("number%d is prime\n counter is%d ",i,counter);
+                System.out.printf("number%d is prime\n counter is%d ", i, counter);
                 counter = counter + 1;
-                System.out.printf("\nis prime %.2f returns ture",i);
+                System.out.printf("\nis prime %.2f returns ture", i);
             }
         }
         return counter;
     }
 
+    public static int[] primesBetween(int num1, int num2) {
+        int counter = 0;
+        int[] primesBetween = new int[numberOfPrimes(num2)];
+        for (int i = num1; i <= num2; i++){
+            if (isPrime(i)){
+                primesBetween[counter]=i;
+                counter++;
 
+            }
+
+        }
+        return primesBetween;
+    }
+//foucs on chap 1 and 2
     /**
      * a method that returns the prime factors of a number
+     *
      * @param number
      * @return
      */
 
 
-public static String uniquePrimeFactorized(int number){
-       String factors ="";
-       for (int i=2;i<=number; i++){
-           while (number % i==0){
-               factors += i +" x ";
-               number = number/i;
-           }
+    public static String uniquePrimeFactorized(int number) {
+        String factors = "";
+        for (int i = 2; i <= number; i++) {
+            while (number % i == 0) {
+                factors += i + " x ";
+                number = number / i;
+            }
 
-       }
-       if (number>2){
-           factors+="";
-       }
+        }
+        if (number > 2) {
+            factors += "";
+        }
 
         return factors;
-        }
-        }
+    }
+}
 
         /*python testing
         * def uniquePrimes(number):

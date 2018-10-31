@@ -24,12 +24,25 @@ public class PrimeTester {
         *
         * c.Prints the unique prime factorization of a number input by the user.
         *
-         *  d.Has a nice console interface to manage these option*/
+         *  d.Has a nice console interface to manage these option
         do {
+            System.out.println("Prime number operations: \n" +
+                    "\tAll primes less then N [A]\n" +
+                    "\tAll primes between N1 and N2 [B]\n" +
+                    "\tunique prime factorization of a number [C]\n" +
+                    "\tQuit [X]\n" +
+                    "Enter selection:");
+            if (userInput.equals("A")||userInput.equals("a")){
+                System.out.println();
+
+            }
+
+
 
         } while (!(userInput.equals("X") || userInput.equals("x"))); //Not X
 
-
+*/
+        System.out.println(PrimeNumberCalculator.primesBetween(0,100));
     }
 
 }
