@@ -54,6 +54,12 @@ public class PrimeNumberCalculator {
 
     public static int[] primesBetween(int num1, int num2) {
         int counter = 0;
+        int holder;
+        if (num1>num2){
+            holder = num2;
+            num2=num1;
+            num2= holder;
+        }
         int[] primesBetween = new int[numberOfPrimes(num2)];
         for (int i = num1; i <= num2; i++) {
             if (isPrime(i)) {
