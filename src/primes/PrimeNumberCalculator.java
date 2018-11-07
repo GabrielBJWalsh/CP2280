@@ -31,7 +31,6 @@ public class PrimeNumberCalculator {
      * @param number
      * @return
      */
-
     public static int numberOfPrimes(int number) {
         int counter = 0;
         for (int i = 0; i <= number; i++) {
@@ -51,7 +50,6 @@ public class PrimeNumberCalculator {
      * @param num2
      * @return
      */
-
     public static int[] primesBetween(int num1, int num2) {
         int counter = 0;
         int holder;
@@ -85,16 +83,14 @@ public class PrimeNumberCalculator {
             }
         }
     }
-//foucs on chap 1 and 2
 
     /**
      * a method that returns the prime factors of a number
      *
      * @param number
+
      * @return
      */
-
-
     public static String uniquePrimeFactorized(int number) {
         String factors = "";
         for (int i = 2; i <= number; i++) {

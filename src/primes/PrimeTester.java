@@ -43,7 +43,7 @@ public class PrimeTester {
         } while (!(userInput.equals("X") || userInput.equals("x"))); //Not X
 
 
-        PrimeNumberCalculator.printArray(PrimeNumberCalculator.primesBetween(0,100));
+
 
     }
 
