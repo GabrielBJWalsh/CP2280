@@ -30,6 +30,23 @@ public class HugeInteger {
         return hugeInteger;
 
     }
-}
 
+    /**
+     * turns char array into int array
+     * @param input
+     * @return
+     */
+    private int[] parInt(char[] input) {
+        int[] parInt = new int[input.length];
+        for (int i = 0; i < input.length; i++) {
+        parInt[i] = Character.getNumericValue(input[i]);}
+        return parInt;
+
+    }
+    public void printArray(char[]input){
+        for (int i=0; i<input.length;i++){
+            System.out.println(input[i]);
+        }
+    }
+}
 
