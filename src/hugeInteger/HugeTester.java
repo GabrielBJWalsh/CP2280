@@ -5,7 +5,9 @@ public class HugeTester {
        String test ="working";
         System.out.println("working");
         HugeInteger hugeInteger = new HugeInteger("working");
-        System.out.println(hugeInteger);
+       hugeInteger.printHugeInt("123244231")
+
+
 
         }
     }

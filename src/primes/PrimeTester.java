@@ -3,6 +3,10 @@ package primes;
 
 import java.util.Scanner;
 
+/**
+ * tester class for Prime Calculator
+ */
+
 public class PrimeTester {
     public static void main(String[] args) {
 

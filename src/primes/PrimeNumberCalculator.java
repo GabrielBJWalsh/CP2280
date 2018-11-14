@@ -107,20 +107,3 @@ public class PrimeNumberCalculator {
         return factors;
     }
 }
-
-        /*python testing
-        * def uniquePrimes(number):
-    factors = "";
-    for i  in range(2,number):
-        while number % i == 0:
-            factors += str(i) + " ";
-            number = number / i;
-
-
-        if number > 2:
-            factors += " ";
-
-    return factors;
-
-
-print(uniquePrimes(49))*/
