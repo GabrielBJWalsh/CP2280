@@ -1,14 +1,15 @@
 package hugeInteger;
 
+
 public class HugeInteger {
 
-    public char [] HugeInteger(String input) {
-        parse(input);
-        return
+    public HugeInteger(java.lang.String input){
 
+         parse(input);
     }
+    public static char[] parse(java.lang.String input){
 
-    private static char[] parse(String input) {
+
         char[] hugeInteger = new char[40];
 
         if (input.length() > 40) {
@@ -30,7 +31,7 @@ public class HugeInteger {
         }
         return hugeInteger;
 
-    }
+    } /*
 
     /**
      * turns char array into int array
@@ -46,11 +47,17 @@ public class HugeInteger {
         return parInt;
 
     }
+    public static String printString(){
+        String print = new String(parse(this));
 
-    public String printHugeInt(HugeInteger) {
 
-        return new String(input);
+
+       return print;
+
     }
+    }
+
+
 
     /**
      * use charter.getNumericValue(i)
@@ -58,13 +65,8 @@ public class HugeInteger {
      * @param input1 , input2
      * @return HugeInteger
      */
-    public HugeInteger hugeAdd(HugeInteger input1, HugeInteger input2) {
-        int carry = 0;
 
-        //carry - sum -sum%10)10;
 
-    }
-}
 
 
 /**
