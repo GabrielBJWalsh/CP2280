@@ -1,77 +1,140 @@
 package hugeInteger;
 
 
+import sun.rmi.transport.proxy.CGIHandler;
+
 public class HugeInteger {
-
-    public HugeInteger(java.lang.String input){
-
-         parse(input);
-    }
-    public static char[] parse(java.lang.String input){
-
-
-        char[] hugeInteger = new char[40];
-
-        if (input.length() > 40) {
-            input = "number too big";
-            hugeInteger = input.toCharArray();
-        } else {
-
-            for (int i = 0; i < input.length(); i++) {
-                if (Character.isDigit(input.charAt(i))) {
-                    hugeInteger[i] = input.charAt(i);
-                } else {
-                    input = "please use only numbers";
-                    hugeInteger = input.toCharArray();
-                    return hugeInteger;
-                }
-
-                return hugeInteger;
-            }
-        }
-        return hugeInteger;
-
-    } /*
+    public char[] hugeInt;
 
     /**
-     * turns char array into int array
+     * constructor for huge integer
+     * @param input
+     */
+    public HugeInteger(java.lang.String input) {
+        this.hugeInt = toZero();
+
+        parse(input);
+
+    }
+
+    /**
+     * parse
+     * a metod to populate a char array with the value of a string
+     * that has numbers
      *
      * @param input
-     * @return
      */
-    private int[] parInt(char[] input) {
-        int[] parInt = new int[input.length];
-        for (int i = 0; i < input.length; i++) {
-            parInt[i] = Character.getNumericValue(input[i]);
+    public void parse(String input) {
+
+        if (input.length() <= 41) {
+            int index = this.hugeInt.length - 1;
+            for (int i = input.length() - 1; i >= 0; i--) {
+                if (Character.isDigit(input.charAt(i))) {
+                    this.hugeInt[index] = input.charAt(i);
+                    index--;
+                }
+            }
+
         }
-        return parInt;
-
     }
-    public static String printString(){
-        String print = new String(parse(this));
-
-
-
-       return print;
-
+    public char[] add(HugeInteger number2){
+        char[] sum = new char[40];
+        int carry =0;
+        char[] num1 = this.hugeInt;
+        char[] num2 = number2.getHugeInt();
+        for(int i = num1.length -1; i>=0;i--){
+            int holdSum =carry +Character.getNumericValue(num1[i])+Character.getNumericValue(num2[i]);
+            carry = holdSum /10 %10;
+            sum[i]=Character.forDigit(holdSum%10,10);
+        }
+        return sum;
     }
-    }
-
 
 
     /**
-     * use charter.getNumericValue(i)
-     *
-     * @param input1 , input2
-     * @return HugeInteger
+     * @return String
      */
+    /**
+     * method used to count the leading zeros before the actual number is placed
+     * @return
+     */
+    public int zeroCounter() {
+        int counter = 0;
+
+        for (int i = 0; i < hugeInt.length; i++) {
+            if(hugeInt[i]=='0'){
+                counter++;
+            }else{break;}
+
+        }
+        return counter;
+    }
+
+    public String printString() {
+        char[] printbleInt = new char[zeroCounter()];
+
+        String print = new String(this.hugeInt);
 
 
+        return print;
+
+    }
+
+    public char[] toZero() {
+        hugeInt = new char[40];
+        for (int i = 0; i < hugeInt.length; i++) {
+            hugeInt[i] = '0';
+        }
+        return hugeInt;
+    }
+
+
+    public char[] getHugeInt() {
+        return hugeInt;
+    }
+
+    public void setHugeInt(char[] hugeInt) {
+        this.hugeInt = hugeInt;
+    }
+}
 
 
 /**
+ * use charter.getNumericValue(i)
+ *
+ * @param input1 , input2
+ * @return HugeInteger
+ * <p>
+ * methods done:
  * set to zero
- * methods needed
+ * methods needed:
+ * isZero
+ * add
+ * subtract
+ * toString
+ * isGreater
+ * isLessThen
+ * IsGreaterOrEqual
+ * isLessThenOrEquel
+ * <p>
+ * methods done:
+ * set to zero
+ * methods needed:
+ * isZero
+ * add
+ * subtract
+ * toString
+ * isGreater
+ * isLessThen
+ * IsGreaterOrEqual
+ * isLessThenOrEquel
+ */
+
+
+/**
+ * methods done:
+ * set to zero
+ * methods needed:
  * isZero
  * add
  * subtract
