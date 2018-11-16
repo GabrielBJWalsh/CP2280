@@ -1,13 +1,12 @@
 package hugeInteger;
 
 
-import sun.rmi.transport.proxy.CGIHandler;
-
 public class HugeInteger {
     public char[] hugeInt;
 
     /**
      * constructor for huge integer
+     *
      * @param input
      */
     public HugeInteger(java.lang.String input) {
@@ -37,17 +36,46 @@ public class HugeInteger {
 
         }
     }
-    public char[] add(HugeInteger number2){
+
+    /**
+     * add method adds two huge ints together
+     *
+     * @param number2
+     * @return String
+     */
+    public String add(HugeInteger number2) {
         char[] sum = new char[40];
-        int carry =0;
+        int carry = 0;
         char[] num1 = this.hugeInt;
         char[] num2 = number2.getHugeInt();
-        for(int i = num1.length -1; i>=0;i--){
-            int holdSum =carry +Character.getNumericValue(num1[i])+Character.getNumericValue(num2[i]);
-            carry = holdSum /10 %10;
-            sum[i]=Character.forDigit(holdSum%10,10);
+        for (int i = num1.length - 1; i >= 0; i--) {
+            int holdSum = carry + Character.getNumericValue(num1[i]) + Character.getNumericValue(num2[i]);
+            carry = holdSum / 10 % 10;
+            sum[i] = Character.forDigit(holdSum % 10, 10);
         }
-        return sum;
+        String someString = new String(sum);
+        HugeInteger someInteger = new HugeInteger(someString);
+        return someInteger.printString();
+    }
+
+    /**
+     * subtract method
+     * @param number2
+     * @return
+     */
+    public String subtract(HugeInteger number2) {
+        char[] sum = new char[40];
+        int carry = 0;
+        char[] num1 = this.hugeInt;
+        char[] num2 = number2.getHugeInt();
+        for (int i = num1.length - 1; i >= 0; i--) {
+            int holdSum = carry + Character.getNumericValue(num1[i]) - Character.getNumericValue(num2[i]);
+            carry = holdSum / 10 % 10;
+            sum[i] = Character.forDigit(holdSum % 10, 10);
+        }
+        String someString = new String(sum);
+        HugeInteger someInteger = new HugeInteger(someString);
+        return someInteger.printString();
     }
 
 
@@ -56,24 +84,44 @@ public class HugeInteger {
      */
     /**
      * method used to count the leading zeros before the actual number is placed
+     *
      * @return
      */
     public int zeroCounter() {
         int counter = 0;
 
         for (int i = 0; i < hugeInt.length; i++) {
-            if(hugeInt[i]=='0'){
+            if (hugeInt[i] == '0') {
                 counter++;
-            }else{break;}
+            } else {
+                break;
+            }
 
         }
         return counter;
     }
 
+    /**
+     * method that prints the hugeInt without any  leading 0 s
+     * @return
+     */
     public String printString() {
-        char[] printbleInt = new char[zeroCounter()];
+        boolean checker = false;
+        int index = 0;
+        char[] printbleInt = new char[40 - zeroCounter()];
 
-        String print = new String(this.hugeInt);
+        for (int i = 0; i < hugeInt.length; i++) {
+            if (hugeInt[i] != '0') {
+                checker = true;
+            }
+            if (checker) {
+                printbleInt[index] = hugeInt[i];
+                index++;
+            }
+
+        }
+
+        String print = new String(printbleInt);
 
 
         return print;
@@ -93,30 +141,12 @@ public class HugeInteger {
         return hugeInt;
     }
 
-    public void setHugeInt(char[] hugeInt) {
-        this.hugeInt = hugeInt;
-    }
 }
 
 
-/**
- * use charter.getNumericValue(i)
- *
- * @param input1 , input2
- * @return HugeInteger
- * <p>
- * methods done:
- * set to zero
- * methods needed:
- * isZero
- * add
- * subtract
- * toString
- * isGreater
- * isLessThen
- * IsGreaterOrEqual
- * isLessThenOrEquel
- * <p>
+
+
+/*
  * methods done:
  * set to zero
  * methods needed:
@@ -130,20 +160,4 @@ public class HugeInteger {
  * isLessThenOrEquel
  */
 
-
-/**
- * methods done:
- * set to zero
- * methods needed:
- * isZero
- * add
- * subtract
- * toString
- * isGreater
- * isLessThen
- * IsGreaterOrEqual
- * isLessThenOrEquel
- */
-/**
- */
 
