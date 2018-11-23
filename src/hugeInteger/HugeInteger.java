@@ -2,7 +2,7 @@ package hugeInteger;
 
 
 public class HugeInteger {
-    public char[] hugeInt;
+    private char[] hugeInt;
 
     /**
      * constructor for huge integer
@@ -50,6 +50,20 @@ public class HugeInteger {
 
 
         return true;
+    }
+
+    /**
+     * a method that determines if a number is not equal to another
+     *
+     * @param number
+     * @return
+     */
+    public boolean isNotEqual(HugeInteger number) {
+        if (!isEqual(number)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
 
@@ -155,21 +169,25 @@ public class HugeInteger {
         HugeInteger someInteger = new HugeInteger(someString);
         return someInteger.printString();
     }
-/*im change thing just to change things*/
+    /*im change thing just to change things*/
     /**
      * subtract method
      *
      * @param number
      * @return
      */
-    public String subtract(HugeInteger number) {
+    public char[] subtract(HugeInteger number) {
         char[] number1;
         char[] number2;
+        int subCounter = 0;
+        char[] diffrence;
+        int temp = 0;
         if (this.zeroCounter() <= number.zeroCounter()) {
-            char[] diffrence = new char[this.zeroCounter() - hugeInt.length];
+            diffrence = new char[hugeInt.length - this.zeroCounter()];
         } else {
-            char[] diffrence = new char[number.zeroCounter() - number.getHugeInt().length];
+            diffrence = new char[number.getHugeInt().length - number.zeroCounter()];
         }
+        subCounter = diffrence.length - 1;
 
         if (number.isGreater(this)) {
             number1 = this.getHugeInt();
@@ -179,27 +197,32 @@ public class HugeInteger {
             number1 = number.getHugeInt();
         }
         for (int i = number1.length - 1; i >= 0; i--) {
-            int temp = 0;
+            temp = 0;
             if (number1[i] >= number2[i]) {
                 temp = Character.getNumericValue(number1[i]) - Character.getNumericValue(number2[i]);
             } else {
                 int j = i;
-                while (j - 1 >= 0){
-                    if(number1[j-1]=='0'){
-                        number1[j-1]='9';
+                while (j - 1 >= 0) {
+                    if (number1[j - 1] == '0') {
+                        number1[j - 1] = '9';
                         j--;
-                    }
-                    else{
-                        number1[i]+=10;
-                        j--;
-                       //TODO
-
+                    } else {
+                        number1[j - 1] = Character.forDigit(Character.getNumericValue(number1[j - 1]) - 1, 10);
+                        temp = (Character.getNumericValue(number1[i])+10) - Character.getNumericValue(number2[i]);
+                        break;
                     }
                 }
             }
+            if (subCounter >= 0) {
+                diffrence[subCounter] = Character.forDigit(temp, 10);
+                subCounter--;
+            } else {
+                return diffrence;
+            }
         }
 
-        return this.printString();
+        //String printDiff = new String(diffrence);
+        return diffrence;
     }
 
 
@@ -271,18 +294,5 @@ public class HugeInteger {
 
 
 
-/*
- * methods done:
- * set to zero
- * isZero
- * add
- * toString
- * isGreater
- * isLessThen
- * IsGreaterOrEqual
- * isLessThenOrEquel
- * methods needed:
- * subtract
- */
 
 
