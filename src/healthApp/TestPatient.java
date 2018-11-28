@@ -24,8 +24,8 @@ public class TestPatient {
         int day = consoleInput.nextInt();
 
 
-        Patient Gabe = new Patient(firstName, lastName, year, month, day, height, weight);
-        System.out.printf("Patient name:%s %s\nDOB:%s\n Age:%d\nHeight in inches:%.1f\n Weight in pounds:%.1f \nMax Heart Rate:%d" +
+        Person Gabe = new Person(firstName, lastName, year, month, day, height, weight);
+        System.out.printf("Person name:%s %s\nDOB:%s\n Age:%d\nHeight in inches:%.1f\n Weight in pounds:%.1f \nMax Heart Rate:%d" +
                         "\nMax Target Heart Rate:%.1f\nMinimum Target Heart Rate:%.1f\nBMI:%.1f",
                 Gabe.getFirstName(), Gabe.getLastName(), Gabe.getDob(), Gabe.age(), Gabe.getHeight(),
                 Gabe.getWeight(), HeartRateCalulator.maxHeartRate(Gabe.age()), HeartRateCalulator.targetMax(Gabe.age()),

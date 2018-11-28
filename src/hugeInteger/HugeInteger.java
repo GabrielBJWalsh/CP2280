@@ -80,7 +80,8 @@ public class HugeInteger {
             less = true;
         } else if (this.zeroCounter() == number.zeroCounter()) {
             for (int i = 0; i < number.getHugeInt().length; i++) {
-                if (Character.getNumericValue(this.getHugeInt()[i]) < Character.getNumericValue(number.getHugeInt()[i])) {
+                if (Character.getNumericValue(this.getHugeInt()[i]) < Character.getNumericValue(number.getHugeInt()[i]))
+                {
                     less = true;
                     return less;
                 } else if (Character.getNumericValue(this.getHugeInt()[i]) > Character.getNumericValue(number.getHugeInt()[i])) {
@@ -290,7 +291,6 @@ public class HugeInteger {
     }
 
 }
-
 
 
 

@@ -1,13 +1,15 @@
 package healthApp;
+
 import java.time.Period;
 import java.time.LocalDate;
 
 /**
  * patient class
  * gives a persons name and dob/age
+ *
  * @author Gabe walsh 20141337
  */
-public class Patient {
+public class Person {
 
 
     public String lastName;
@@ -18,7 +20,7 @@ public class Patient {
 
 
     /**
-     * Patient constructor class
+     * Person constructor class
      *
      * @param firstName
      * @param lastName
@@ -26,7 +28,8 @@ public class Patient {
      * @param birthMonth
      * @param birthDay
      */
-    public Patient(String lastName, String firstName, int birthYear, int birthMonth, int birthDay, double height, double weight) {
+    public Person(
+            String lastName, String firstName, int birthYear, int birthMonth, int birthDay, double height, double weight) {
         setFirstName(firstName);
         setLastName(lastName);
         setDob(birthYear, birthMonth, birthDay);
@@ -40,15 +43,16 @@ public class Patient {
      * @return int
      */
     public int age() {
-        return Period.between(getDob(),LocalDate.now()).getYears();
-                //LocalDate.now().getYear() - dob.getYear();
+        return Period.between(getDob(), LocalDate.now()).getYears();
+        //LocalDate.now().getYear() - dob.getYear();
     }
 
 
     //SETTERS
 
     /**
-     * Setter method for Patient height
+     * Setter method for Person height
+     *
      * @param height
      */
 
@@ -61,7 +65,8 @@ public class Patient {
     }
 
     /**
-     * Setter method for Patient weight
+     * Setter method for Person weight
+     *
      * @param weight
      */
 
@@ -74,7 +79,7 @@ public class Patient {
     }
 
     /**
-     * setter method for Patient Date of Birth
+     * setter method for Person Date of Birth
      *
      * @param year
      * @param month
@@ -147,7 +152,7 @@ public class Patient {
     }
 
     /**
-     * Getter method for patient HGetter method for Patient height
+     * Getter method for patient HGetter method for Person height
      *
      * @return int
      */
@@ -156,7 +161,7 @@ public class Patient {
     }
 
     /**
-     * Getter method for Patient weight
+     * Getter method for Person weight
      *
      * @return int
      */
