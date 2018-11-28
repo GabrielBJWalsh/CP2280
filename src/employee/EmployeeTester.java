@@ -1,7 +1,7 @@
 package employee;
 /**
  * tester class for Employee
- */
+ *//*
 public class EmployeeTester {
     public static void main(String[] args) {
         Employee employee = new Employee("David", "Parsons", 3900.00);
@@ -20,5 +20,5 @@ public class EmployeeTester {
     }
 
 
-}
+}*/
 
