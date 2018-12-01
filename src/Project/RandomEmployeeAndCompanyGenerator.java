@@ -1,119 +1,238 @@
 package Project;
 
-import employee.Employee;
-
 import java.util.List;
 import java.util.Random;
 import java.util.LinkedList;
-import java.util.List;
+import java.time.LocalDate;
 
+/**
+ * an employee generator class to generate list of employees
+ */
 
 public class RandomEmployeeAndCompanyGenerator {
-    String[] firstName = {
-            "Darrick",
-            "Troy",
-            "Lianne",
-            "Fidela",
-            "Doris",
-            "Chantell",
-            "Ashlee",
-            "Marylou",
-            "Lurlene",
-            "Elke",
-            "Al",
-            "Masako",
-            "Janelle",
-            "Jenice",
-            "Jadwiga",
-            "Ann",
-            "Liz",
-            "Lucilla",
-            "Joan",
-            "Danielle "};
-    String[] lastName = {
-            "Huttenback",
-            "Castillo",
-            "Benabou",
-            "Kee",
-            "Kenward",
-            "Ramey",
-            "Pulido",
-            "Lage",
-            "Middle",
-            "O'marley",
-            "Ogletree",
-            "Herrin",
-            "Clare",
-            "Isola",
-            "Cesar",
-            "Davy",
-            "Good",
-            "Diller",
-            "Grabbe",
-            "Vela-estrada"};
     /**
-     * Salaryed employee generator
-     * @param numberOSalaryedEmployees
-     * @return
+     * salaryed Employee Generator
+     * @return List of Salyaryed employees
      */
-    public static List<Employee> generateEmployees() {
-        String[] firstName = {"Darrick", "Troy", "Lianne", "Fidela", "Doris", "Chantell", "Ashlee", "Marylou", "Lurlene", "Elke", "Al", "Masako", "Janelle", "Jenice", "Jadwiga", "Ann", "Liz", "Lucilla", "Joan", "Danielle "};
-        String[] lastName = {"Huttenback", "Castillo", "Benabou", "Kee", "Kenward", "Ramey", "Pulido", "Lage", "Middle", "O'marley", "Ogletree", "Herrin", "Clare", "Isola", "Cesar", "Davy", "Good", "Diller", "Grabbe", "Vela-estrada"};
+
+    public static List<SalaryedEmployee> generateSalaryedEmployees() {
+        String[] firstName = {"Darrick",
+                "Troy",
+                "Lianne",
+                "Fidela",
+                "Doris",
+                "Chantell",
+                "Ashlee",
+                "Marylou",
+                "Lurlene",
+                "Elke",
+                "Al",
+                "Masako",
+                "Janelle",
+                "Jenice",
+                "Jadwiga",
+                "Ann",
+                "Liz",
+                "Lucilla",
+                "Joan",
+                "Danielle "};
+        String[] lastName = {"Huttenback",
+                "Castillo",
+                "Benabou",
+                "Kee",
+                "Kenward",
+                "Ramey",
+                "Pulido",
+                "Lage",
+                "Middle",
+                "O'marley",
+                "Ogletree",
+                "Herrin",
+                "Clare",
+                "Isola",
+                "Cesar",
+                "Davy",
+                "Good",
+                "Diller",
+                "Grabbe",
+                "Vela-estrada"};
         Random rand = new Random();
-        List<Employee> listOfEmployees = new LinkedList<>();
-    /*public SalaryedEmployee salaryedEmployeeGenerator(int numberOSalaryedEmployees ){
-       for (int i = 0; i >= numberOSalaryedEmployees; i++) {
-           SalaryedEmployee salaryedEmployee1 = new SalaryedEmployee("holder",
-                   "holder",
-                   9999,
-                   9,
-                   9,
-                   99,
-                   999,
-                   999);
-       }
-       returnsalaryedEmployee1 ;
+        List<SalaryedEmployee> listOfSalryedEmployees = new LinkedList<>();
+        for (int i = 0; i < firstName.length; i++) {
+            for (int j = 0; j < lastName.length; j++) {
+                //Randomized variables to be used
+                int year = (int) Math.round(LocalDate.now().getYear() - 40 + (15 * rand.nextGaussian()));
+                int day = rand.nextInt(28) + 1;
+                int month = rand.nextInt(12) + 1;
+                int height = rand.nextInt(76) + 1;
+                int weight = rand.nextInt(150) + 110;
+                int salary = rand.nextInt(600000) + 15000;
+                SalaryedEmployee sal = new SalaryedEmployee(firstName[i],
+                        lastName[j],
+                        year,
+                        month,
+                        day,
+                        height,
+                        weight,
+                        salary);
+                listOfSalryedEmployees.add(sal);
 
-   }*/
+
+            }
+        }
+        return listOfSalryedEmployees;
+    }
+
     /**
-     * Executive employee generator
-      * @param numberOExutiveEmployees
+     * an hourly Employee generator
      * @return
      */
+    public static List<HourlyEmployee> generateHourlyEmployees() {
+        String[] firstName = {"Darrick",
+                "Troy",
+                "Lianne",
+                "Fidela",
+                "Doris",
+                "Chantell",
+                "Ashlee",
+                "Marylou",
+                "Lurlene",
+                "Elke",
+                "Al",
+                "Masako",
+                "Janelle",
+                "Jenice",
+                "Jadwiga",
+                "Ann",
+                "Liz",
+                "Lucilla",
+                "Joan",
+                "Danielle "};
+        String[] lastName = {"Huttenback",
+                "Castillo",
+                "Benabou",
+                "Kee",
+                "Kenward",
+                "Ramey",
+                "Pulido",
+                "Lage",
+                "Middle",
+                "O'marley",
+                "Ogletree",
+                "Herrin",
+                "Clare",
+                "Isola",
+                "Cesar",
+                "Davy",
+                "Good",
+                "Diller",
+                "Grabbe",
+                "Vela-estrada"};
+        Random rand = new Random();
+        List<HourlyEmployee> listOfHourlyEmployees = new LinkedList<>();
+        for (int i = 0; i < firstName.length; i++) {
+            for (int j = 0; j < lastName.length; j++) {
+                //Randomized variables to be used
+                int year = (int) Math.round(LocalDate.now().getYear() - 40 + (15 * rand.nextGaussian()));
+                int day = rand.nextInt(28) + 1;
+                int month = rand.nextInt(12) + 1;
+                int height = rand.nextInt(76) + 1;
+                int weight = rand.nextInt(150) + 110;
 
-    /*public ExcutiveEmployee excutiveEmployeeGenerator(int numberOExutiveEmployees ) {
+                int hourlyWage = rand.nextInt(50) + 10;
+                int hoursPerWeek = rand.nextInt(20) + 20;
 
-        for (int i = 0; i >= numberOfHourlyEmployees; i++) {
-            ExcutiveEmployee excutiveEmployee1 = new ExcutiveEmployee("holder",
-                    "holder",
-                    9999,
-                    9,
-                    9,
-                    99,
-                    999,
-                    999,
-                    99);
+                HourlyEmployee hourly = new HourlyEmployee(firstName[i],
+                        lastName[j],
+                        year,
+                        month,
+                        day,
+                        height,
+                        weight,
+                        hourlyWage,hoursPerWeek);
+                listOfHourlyEmployees.add(hourly);
+
+
+            }
         }
-        return excutiveEmployee1;
+        return listOfHourlyEmployees;
     }
-*/
-    /**
-     * hourly employee generator
-     */
-   /* public HourlyEmployee randomHourly(int numberOfHourlyEmployees) {
-        for (int i = 0; i >= numberOfHourlyEmployees; i++) {
-            HourlyEmployee hourlyEmployee1 = new HourlyEmployee("holder",
-                "holder",
-                9999,
-                9,
-                9,
-                99,
-                999,
-                99,
-                99);
-        }
-        return hourlyEmployee1;*/
 
+    /**
+     * Exctive employee generator
+     * @return
+     */
+    public static List<ExcutiveEmployee> generateExcutiveEmployees() {
+        String[] firstName = {"Darrick",
+                "Troy",
+                "Lianne",
+                "Fidela",
+                "Doris",
+                "Chantell",
+                "Ashlee",
+                "Marylou",
+                "Lurlene",
+                "Elke",
+                "Al",
+                "Masako",
+                "Janelle",
+                "Jenice",
+                "Jadwiga",
+                "Ann",
+                "Liz",
+                "Lucilla",
+                "Joan",
+                "Danielle "};
+        String[] lastName = {"Huttenback",
+                "Castillo",
+                "Benabou",
+                "Kee",
+                "Kenward",
+                "Ramey",
+                "Pulido",
+                "Lage",
+                "Middle",
+                "O'marley",
+                "Ogletree",
+                "Herrin",
+                "Clare",
+                "Isola",
+                "Cesar",
+                "Davy",
+                "Good",
+                "Diller",
+                "Grabbe",
+                "Vela-estrada"};
+        Random rand = new Random();
+        List<ExcutiveEmployee> listOfExcutiveEmployees = new LinkedList<>();
+        for (int i = 0; i < firstName.length; i++) {
+            for (int j = 0; j < lastName.length; j++) {
+                //Randomized variables to be used
+                int year = (int) Math.round(LocalDate.now().getYear() - 40 + (15 * rand.nextGaussian()));
+                int day = rand.nextInt(28) + 1;
+                int month = rand.nextInt(12) + 1;
+                int height = rand.nextInt(76) + 1;
+                int weight = rand.nextInt(150) + 110;
+
+                int salary = rand.nextInt(100000) + 50000;
+                int bonus = rand.nextInt(10) + 1;
+
+                ExcutiveEmployee excutive = new ExcutiveEmployee(firstName[i],
+                        lastName[j],
+                        year,
+                        month,
+                        day,
+                        height,
+                        weight,
+                        salary,
+                        bonus);
+                listOfExcutiveEmployees.add(excutive);
+
+
+            }
+        }
+        return listOfExcutiveEmployees;
+    }
 
 }
 
