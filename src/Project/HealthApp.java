@@ -26,16 +26,16 @@ public class HealthApp {
         System.out.println("plesee provide the day of the month the patient was born ");
         int day = consoleInput.nextInt();
         Person patient = new Person(firstName, lastName, year, month, day, height, weight);
-        System.out.println("Press C to get the Patients MAX heart rate");
-        System.out.println("Press B to get the Patients MAX heart rate");
         do {
+            System.out.println("Press C to get the Patients MAX heart rate");
+            System.out.println("Press B to get the Patients BMI");
             // note to self look for split like  method to clean up code below
+           String userInput = consoleInput.next();
 
-
-            if (consoleInput.next().equals("C") || consoleInput.next().equals("c")) {
+            if (userInput.equals("C") || userInput.equals("c")) {
                 System.out.printf("Max Target Heart Rate:%d\\", HeartRateCalulator.maxHeartRate(patient.age()));
             }
-            if (consoleInput.next().equals("B") || consoleInput.next().equals("b")) {
+            else if (userInput.equals("B") || userInput.equals("b")) {
                 System.out.printf("Patient BMI is:%.2f\\", BMICalculator.getBMI(patient.getHeight(), patient.getWeight()));
 
                 System.out.printf("Person Information:%s %s/n%s/n%f/n%f",
@@ -45,7 +45,7 @@ public class HealthApp {
                         patient.getHeight(),
                         patient.getWeight());
             }
-            if (consoleInput.next().equals("R") || consoleInput.next().equals("r")) {
+            else if (userInput.equals("R") || userInput.equals("r")) {
                 System.out.printf("Max Target Heart Rate:%.1f/n MINIMUM target heart Rate:%.1f",
                         HeartRateCalulator.targetMax(patient.age()), HeartRateCalulator.targetMin(patient.age()));
             }
