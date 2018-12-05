@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class TestPatient {
     public static void main(String[] args) {
         // set up scanner
-        Scanner consoleInput = new Scanner(System.in);
+    /*    Scanner consoleInput = new Scanner(System.in);
 
         // note to self look for split like  method to clean up code below
         System.out.println("WELCOME:\n\n please provide patients first name ");
@@ -32,6 +32,7 @@ public class TestPatient {
                 HeartRateCalulator.targetMin(Gabe.age()), BMICalculator.getBMI(Gabe.getHeight(), Gabe.getWeight()));
 
         System.out.println("\nBMI VALUES:\nUnderweight: less than 18.5\nNormal: between 18.5 and 24.9\nOverweight: between 25 and 29.9\nObese: 30 or greater");
+*/
     }
 
 }
