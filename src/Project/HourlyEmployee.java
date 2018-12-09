@@ -2,10 +2,13 @@ package Project;
 
 import employee.Employee;
 
+import java.time.LocalDate;
+import java.time.Period;
+
 public class HourlyEmployee extends Employee {
     private double dollorsPerHour;
     private double hours;
-    private double avgHours;
+    private double avgHoursPerWeek;
 
     public HourlyEmployee(
             String fName,
@@ -16,11 +19,15 @@ public class HourlyEmployee extends Employee {
             double height,
             double weight,
             double dollorsPerHour,
-            double hours
+            double hoursPerWeek
     ) {
         super(fName, Lname, birthYear, birthMonth, birthDay, height, weight);
-        setHours(hours);
+        setAvgHoursPerWeek(hoursPerWeek);
         setDollorsPerHour(dollorsPerHour);
+    }
+    public  int age() {
+        return Period.between(getDob(), LocalDate.now()).getYears();
+
     }
 
     public double getDollorsPerHour() {
@@ -38,13 +45,13 @@ public class HourlyEmployee extends Employee {
         return hours;
     }
 
-    public double getAvgHours() {
-        return avgHours;
+    public double getAvgHoursPerWeek() {
+        return avgHoursPerWeek;
     }
 
-    public void setAvgHours(double avgHours) {
-        if (avgHours >= 0) {
-            this.avgHours = avgHours;
+    public void setAvgHoursPerWeek(double avgHoursPerWeek) {
+        if (avgHoursPerWeek >= 0) {
+            this.avgHoursPerWeek = avgHoursPerWeek;
         }
     }
 
@@ -53,9 +60,15 @@ public class HourlyEmployee extends Employee {
             this.hours = hours;
         }
     }
-
-    public double getPay(double hours, double dollorsPerHour) {
-        return hours * dollorsPerHour;
+    public double getAnnualWage(){
+     return (avgHoursPerWeek*dollorsPerHour)*52;
     }
 
+   /* public static double getPay() {
+        double avgHoursPerWeek = this.avgHoursPerWeek;
+
+        return avgHoursPerWeek * dollorsPerHour;
+        }*/
 }
+
+

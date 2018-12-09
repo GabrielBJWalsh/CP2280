@@ -14,7 +14,7 @@ public class HeartRateCalulator {
     }
 
     /**
-     * heart reate calulator that gets the maximum target heart rate of a patient
+     * heart rate calulator that gets the maximum target heart rate of a patient
      * @return double
      */
     public static double targetMax(int patientAge){
