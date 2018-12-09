@@ -1,5 +1,6 @@
 package Project;
 
+
 import employee.Employee;
 import healthApp.BMICalculator;
 import healthApp.HeartRateCalulator;
@@ -115,8 +116,8 @@ public class EmployeeManagementApplcation {
 
             }
             if (checker.equals("B") || checker.equals("b")) {
-                System.out.println("Sample size?");
-                Employee[] company = RandomEmployeeAndCompanyGenerator.generateCompany(input.nextInt());
+
+                Employee[] company = RandomEmployeeAndCompanyGenerator.generateCompany(5);
                 for (int i = 0; i < company.length; i++) {
                    // printEmployee(company[i]);
                     System.out.printf("\nEmployee name: %s %s" +
@@ -136,6 +137,7 @@ public class EmployeeManagementApplcation {
                             EmployeeHeathInsureaceCalculator.calculateInsureance(company[i].getAnnualWage(),
                             BMICalculator.getBMI(company[i].getHeight(),company[i].getWeight()),
                             heartRate,
+
                             HeartRateCalulator.targetMax(company[i].age())) / 12);
                 }
 
